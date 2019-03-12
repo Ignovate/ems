@@ -1,0 +1,86 @@
+
+logging:
+    level:
+        ROOT: INFO
+        com.ignovate: INFO
+        
+spring:
+    application:
+        name: ignovate-api-service
+    profiles:
+        active: dev
+        include:
+    jackson:
+        serialization.indent_output: true
+    datasource:
+        type: com.zaxxer.hikari.HikariDataSource
+        url: jdbc:mysql://localhost:3306/ignovate?useSSL=false
+        username: root
+        password: 
+        hikari:
+            auto-commit: false
+            data-source-properties:
+                cachePrepStmts: true
+                prepStmtCacheSize: 250
+                prepStmtCacheSqlLimit: 2048
+                useServerPrepStmts: true
+    jpa:
+        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+        database: MYSQL
+        show-sql: true
+        properties:
+            hibernate.id.new_generator_mappings: true
+            hibernate.connection.provider_disables_autocommit: true
+            hibernate.cache.use_second_level_cache: false
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: false
+            hibernate.naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+            
+    mail:
+        host: smtp.gmail.com
+        port: 587
+        username: test@gmail.com
+        password: rnyjryhixksouzul
+        properties:
+            mail.smtp.starttls.enable: true
+            mail.smtp.starttls.required: true
+            mail.smtp.auth: true
+            mail.smtp.connectiontimeout: 5000
+            mail.smtp.timeout: 5000
+            mail.smtp.writetimeout: 5000
+    servlet:
+        multipart:
+            enabled: true
+            file-size-threshold: 2KB
+            max-file-size: 200MB
+            max-request-size: 215MB
+
+file:
+    upload-dir: ./uploads
+
+
+server:
+    port: 8082
+    servlet:
+        context-path: /${spring.application.name}
+
+sms:
+  sender:
+    id: LECTRE
+  url: http://2factor.in/API/V1/b37b6fb1-cba9-11e8-a895-0200cd936042/ADDON_SERVICES/SEND/TSMS
+  register:
+    template: Sign Up Success
+  reset:
+    template: Changed Password
+  otp:
+    template: Sign Up
+email:
+  otp:
+    text: Your otp is
+  register:
+    text: Your account created in iGnovate Solutions
+    subject: Account created
+  update:
+    text: Your account updated in iGnovate Solutions
+    subject: Account updated
+    
