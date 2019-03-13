@@ -14,9 +14,9 @@ spring:
         serialization.indent_output: true
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:mysql://localhost:3306/ignovate?useSSL=false
+        url: jdbc:mysql://209.97.130.34:3306/igems?useSSL=false
         username: root
-        password: 
+        password: Achu2106
         hikari:
             auto-commit: false
             data-source-properties:
