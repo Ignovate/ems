@@ -66,7 +66,7 @@ server:
 
 sms:
   sender:
-    id: LECTRE
+    id: IGNO
   url: http://2factor.in/API/V1/b37b6fb1-cba9-11e8-a895-0200cd936042/ADDON_SERVICES/SEND/TSMS
   register:
     template: Sign Up Success
