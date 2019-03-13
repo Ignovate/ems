@@ -65,7 +65,7 @@ public class TaskAssignController {
 		TaskAssignEntity oldData = taskAssignService.getTaskAssignDetail(id);
 		if(oldData == null)
 			return ResponseEntity.notFound().build();
-			   logs.setAssign_id(id);
+			   logs.setAssign_id(id); 
 			   taskAssignService.addTaskAssign(logs);
 			   return new ResponseEntity<TaskAssignEntity>( taskAssignService.getTaskAssignDetail(id), HttpStatus.OK);		
 	}
