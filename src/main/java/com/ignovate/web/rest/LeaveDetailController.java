@@ -45,7 +45,7 @@ public class LeaveDetailController {
 	}
 	
 	@PutMapping("leavedetails/{id}")
-	public ResponseEntity<LeavemanagementEntity> updateAttendanceDetail(@RequestBody LeavemanagementEntity logs, @PathVariable Long id){
+	public ResponseEntity<LeavemanagementEntity> updateLeaveDetail(@RequestBody LeavemanagementEntity logs, @PathVariable Long id){
 		LeavemanagementEntity oldData = leaveDetailService.getLeaveDetail(id);
 		if(oldData == null)
 			return ResponseEntity.notFound().build();
@@ -55,7 +55,7 @@ public class LeaveDetailController {
 	}
 	
 	@GetMapping("leavedetails/filter")
-	public ResponseEntity<List<LeavemanagementEntity>> getUsersWithFilter(@RequestParam Map<String, String> params) {
+	public ResponseEntity<List<LeavemanagementEntity>> getLeaveWithFilter(@RequestParam Map<String, String> params) {
 		log.info("Inside Filter Function");
 		return new ResponseEntity<List<LeavemanagementEntity>>(leaveDetailService.getLeaveDetailWithFilter(params), HttpStatus.OK);
 	}

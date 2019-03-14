@@ -56,7 +56,7 @@ public class AttendanceDetailController {
 	}
 	
 	@GetMapping("attendance/filter")
-	public ResponseEntity<List<AttendanceEntity>> getUsersWithFilter(@RequestParam Map<String, String> params) {
+	public ResponseEntity<List<AttendanceEntity>> getAttendanceWithFilter(@RequestParam Map<String, String> params) {
 		log.info("Inside Filter Function");
 		return new ResponseEntity<List<AttendanceEntity>>(attendanceDetailService.getAttendanceDetailWithFilter(params), HttpStatus.OK);
 	}

@@ -32,9 +32,12 @@ public class ResponseVm {
 	
 	public static ResponseVm getSuccessVm()
 	{
-		return new ResponseVm(Constants.SUCCESS_CODE, Constants.SUCCESS);
+		return new ResponseVm(Constants.SUCCESS, Constants.SUCCESS);
 	}
-	
+	public static ResponseVm getFailureVm()
+	{
+		return new ResponseVm(Constants.FAILURE, Constants.FAILURE);
+	}
 	public static ResponseVm getErrorVm(IgnovateException e)
 	{
 		return new ResponseVm(e.getCode(), e.getMessage());
